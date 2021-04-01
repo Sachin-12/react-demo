@@ -1,13 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import networkRequest from "../helpers/networkRequest";
+import People from "./PeopleScreen";
 
 const Home = () => {
+  const [users, setUsers] = useState([]);
   useEffect(() => {
-    const data = networkRequest("/api/users");
+    networkRequest("/api/users")
+      .then((result) => setUsers(result.data))
+      .catch((err) => console.log(err));
   }, []);
   return (
     <div>
-      <p>Welcome to Home page</p>
+      <p>Home page</p>
+      <People users={users} />
     </div>
   );
 };

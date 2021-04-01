@@ -1,9 +1,17 @@
 import React from "react";
 
-const People = () => {
+const People = (props) => {
   return (
     <div>
-      <p>Welcome to friends page</p>
+      <p>Lets make some friends</p>
+      {props.users.map((user) => {
+        return (
+          <>
+            <p>{user.first_name}</p>
+            <img src={user.avatar} alt="your_pic" />
+          </>
+        );
+      })}
     </div>
   );
 };
