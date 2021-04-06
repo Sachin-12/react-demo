@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import InputField from "./InputField";
 
 const Form = (props) => {
   const [username, setUsername] = useState("");
@@ -8,23 +7,32 @@ const Form = (props) => {
   const user = "demo@zf.com";
   const pwd = "test!123";
   // add authentication
+  const authenticate = () => {
+    if (username === user && password === pwd) return true;
+  };
   return (
     <form className="form-container">
-      <label>Username :</label>
-      <input
-        type="text"
-        onChange={(e) => setUsername(e.value)}
-        placeholder="enter your username"
-        value={username}
-      />
-      <label>Password :</label>
-      <input
-        type="text"
-        onChange={(e) => setPassword(e.value)}
-        placeholder="enter your password"
-        value={password}
-      />
-      <button type="submit">Sign in</button>
+      <div>
+        <label>Username :</label>
+        <input
+          type="text"
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="enter your username"
+          value={username}
+        />
+      </div>
+      <div>
+        <label>Password :</label>
+        <input
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="enter your password"
+          value={password}
+        />
+      </div>
+      <button class="sign-in" onClick={authenticate} type="submit">
+        Sign in
+      </button>
     </form>
   );
 };

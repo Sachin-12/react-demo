@@ -1,6 +1,6 @@
 export default {
-  home: "/",
-  login: "/login",
-  books: "/friends",
+  login: "/",
+  home: "/home",
+  friends: "/friends",
   people: "/people"
 };
