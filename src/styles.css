@@ -2,3 +2,32 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  height: 30px;
+  border: 1px solid wheat;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 10px auto 10px auto;
+}
+
+ul {
+  list-style-type: none;
+}
+.user {
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
+  margin: 5px auto 5px auto;
+}
+
+img {
+  border-radius: 50%;
+}

@@ -4,7 +4,7 @@ import Form from "../components/Form";
 const Login = () => {
   return (
     <div>
-      <p>Welcome to Home page</p>
+      <p>React Demo</p>
       <Form />
     </div>
   );

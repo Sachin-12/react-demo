@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import route from "./routes/route";
 import NavBar from "./components/NavBar";
 import Home from "./pages/HomeScreen";
-import People from "./pages/PeopleScreen";
 import Login from "./pages/LoginScreen";
 import Friends from "./pages/FriendsScreen";
+import PrivateRoute from "./components/PrivateRoute";
+import People from "./components/People";
 
 export default function App() {
   return (
@@ -14,10 +15,10 @@ export default function App() {
       <Router>
         <NavBar />
         <Switch>
-          <Route path={route.home} component={Home}></Route>
-          <Route path={route.login} component={Login}></Route>
-          <Route path={route.friends} component={Friends}></Route>
-          <Route path={route.people} component={People}></Route>
+          <Route exact path={route.login} component={Login} />
+          <PrivateRoute path={route.home} component={Home} />
+          <PrivateRoute path={route.friends} component={Friends} />
+          <PrivateRoute path={route.people} component={People} />
         </Switch>
       </Router>
     </div>
